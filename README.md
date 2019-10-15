@@ -17,3 +17,6 @@
 
 ## A rendre
 - [ ] une url de votre projet github. Les commandes principales de git : "git status" / "git add" / "git commit" / "git push"
+
+# Suite
+- [ ] Observer la nouvelle structure du code en orienté objet et coder les "todo"

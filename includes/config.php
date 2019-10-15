@@ -1,4 +1,4 @@
-<?
+<?php
 
 //database credentials
 define('DB_HOST', 'db');

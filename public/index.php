@@ -1,8 +1,17 @@
-<?
+<?php
 
 require_once '../includes/config.php';
 
-$posts = get_all_posts();
+$pt = new PostTable();
+
+if (isset($_POST['title']) && isset($_POST['content'])) {
+    $post = new Post();
+    $post->setTitle($_POST['title']);
+    $post->setContent($_POST['content']);
+    $pt->create($post);
+}
+
+$posts = $pt->all();
 
 ?>
 
@@ -22,6 +31,20 @@ $posts = get_all_posts();
                     <p><?= $post['content'] ?></p>
                 </div>
             <? endforeach; ?>
+        </div>
+        <h1>Add a Post</h1>
+        <div class="row">
+            <form action="" method="POST">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" name="title">
+                </div>
+                <div class="form-group">
+                    <label for="title">Content</label>
+                    <textarea class="form-control" name="content"></textarea>
+                </div>
+                <input type="submit" class="btn btn-primary">
+            </form>
         </div>
     </div>
 </body>

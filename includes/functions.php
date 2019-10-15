@@ -1,8 +1,4 @@
-<?
+<?php
 
-function get_all_posts()
-{
-    global $db;
-    $sth = $db->query("SELECT * FROM posts");
-    return $sth->fetchAll();
-}
+require_once 'classes/Post.php';
+require_once 'tables/PostTable.php';
