@@ -3,7 +3,7 @@
 //database credentials
 define('DB_HOST', 'db');
 define('DB_NAME', 'postgres');
-define('DB_HOST', '5432');
+define('DB_PORT', '5432');
 define('DB_USER', 'postgres');
 define('DB_PASS', 'password');
 
