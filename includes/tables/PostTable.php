@@ -15,7 +15,7 @@ class PostTable
     {
         // todo
     }
-    
+
     public function all(): array
     {
         $sth = $this->db->query("SELECT * FROM {$this->table}");
@@ -25,12 +25,14 @@ class PostTable
     public function create(Post $post): void
     {
         $sth = $this->db->prepare("INSERT INTO {$this->table} (title, content) VALUES (:title, :content)");
-        $sth->bindParam(':title', $post->getTitle());
-        $sth->bindParam(':content', $post->getContent());
+        $title=$post->getTitle();
+        $content=$post->getContent();
+        $sth->bindParam(':title', $title);
+        $sth->bindParam(':content', $content);
         $result = $sth->execute();
 
         if (!$result) {
-            throw new Exception("Error during creation with the table {$this->table}");
+            throw new Exception("Error while creating the table {$this->table}");
         }
     }
 
