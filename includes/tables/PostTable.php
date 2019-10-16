@@ -15,7 +15,7 @@ class PostTable
     {
         // todo
     }
-    
+
     public function all(): array
     {
         $sth = $this->db->query("SELECT * FROM {$this->table}");
@@ -30,7 +30,7 @@ class PostTable
         $result = $sth->execute();
 
         if (!$result) {
-            throw new Exception("Error during creation with the table {$this->table}");
+            throw new Exception("Error while creating the table {$this->table}");
         }
     }
 
