@@ -25,12 +25,12 @@ $posts = $pt->all();
     <div class="container">
         <h1 class="text-center">Blog</h1>
         <div class="row">
-            <? foreach($posts as $post): ?>
+            <?php foreach($posts as $post): ?>
                 <div class="col-md-4">
                     <h2><?= $post['title'] ?></h2>
                     <p><?= $post['content'] ?></p>
                 </div>
-            <? endforeach; ?>
+            <?php endforeach; ?>
         </div>
         <h1>Add a Post</h1>
         <div class="row">
